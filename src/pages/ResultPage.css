@@ -1,0 +1,139 @@
+.result-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.result-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.result-page-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.result-page-subtitle {
+  margin: 0;
+  color: #64748b;
+}
+
+.result-page-provider {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  color: #059669;
+}
+
+.result-page-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.result-page-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.result-page-empty h2 {
+  margin: 0 0 0.5rem;
+  color: #1e293b;
+}
+
+.result-page-empty p {
+  margin: 0 0 1.5rem;
+  color: #64748b;
+}
+
+.result-page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.result-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.result-section-title {
+  margin: 0 0 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.result-furniture-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.result-furniture-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.result-furniture-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: white;
+}
+
+.result-furniture-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.result-furniture-name {
+  display: block;
+  font-weight: 500;
+  color: #1e293b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-furniture-price {
+  display: block;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.result-furniture-link {
+  font-size: 0.875rem;
+  color: #2563eb;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.result-furniture-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .result-page-header {
+    flex-direction: column;
+  }
+
+  .result-page-actions {
+    width: 100%;
+  }
+
+  .result-page-actions .btn {
+    flex: 1;
+  }
+}

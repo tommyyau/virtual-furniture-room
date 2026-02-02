@@ -1,0 +1,37 @@
+.room-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.room-preview-image-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1e293b;
+}
+
+.room-preview-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.room-preview-dimensions {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.room-preview-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}

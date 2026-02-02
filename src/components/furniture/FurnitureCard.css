@@ -1,0 +1,74 @@
+.furniture-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.furniture-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.furniture-card-selected {
+  border-color: #2563eb;
+}
+
+.furniture-card-image-container {
+  position: relative;
+  aspect-ratio: 1;
+  background: #f8fafc;
+}
+
+.furniture-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.furniture-card-selected-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 28px;
+  height: 28px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.furniture-card-content {
+  padding: 1rem;
+}
+
+.furniture-card-name {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.furniture-card-dimensions {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.furniture-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.furniture-card-price {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e293b;
+}

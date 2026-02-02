@@ -1,0 +1,33 @@
+.result-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.result-viewer-image-container {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1e293b;
+}
+
+.result-viewer-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.result-viewer-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .result-viewer-actions {
+    flex-direction: column;
+  }
+
+  .result-viewer-actions .btn {
+    width: 100%;
+  }
+}

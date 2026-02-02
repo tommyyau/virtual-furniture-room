@@ -1,0 +1,23 @@
+.placement-canvas {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1e293b;
+}
+
+.placement-canvas-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.placement-canvas-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  border: 2px dashed #cbd5e1;
+  color: #64748b;
+}
