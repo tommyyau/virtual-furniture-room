@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { ResultViewer } from '../components/visualization/ResultViewer';
-import { CompareSlider } from '../components/visualization/CompareSlider';
 import { Button } from '../components/ui/Button';
 import { useVisualizationStore, useRoomStore, useFurnitureStore } from '../store';
 import { ROOM_TYPE_LABELS, DESIGN_STYLE_LABELS } from '../types/room';
@@ -63,15 +62,18 @@ export function ResultPage() {
 
       <div className="result-page-content">
         <section className="result-section">
-          <h2 className="result-section-title">Compare Before & After</h2>
-          <CompareSlider
-            beforeImage={result.originalRoomUrl}
-            afterImage={result.generatedImageUrl}
-          />
+          <h2 className="result-section-title">Original Room</h2>
+          <div className="result-image-container">
+            <img
+              src={result.originalRoomUrl}
+              alt="Original room"
+              className="result-image"
+            />
+          </div>
         </section>
 
         <section className="result-section">
-          <h2 className="result-section-title">Generated Result</h2>
+          <h2 className="result-section-title">AI-Generated Design</h2>
           <ResultViewer
             imageUrl={result.generatedImageUrl}
             onTryAgain={handleTryAgain}

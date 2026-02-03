@@ -70,6 +70,17 @@
   color: #1e293b;
 }
 
+.result-image-container {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.result-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .result-furniture-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
