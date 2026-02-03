@@ -20,13 +20,7 @@ export function DesignPage() {
     navigate('/catalog');
   };
 
-  if (status === 'generating' || status === 'uploading') {
-    return (
-      <div className="design-page">
-        <LoadingState message={`Generating with ${AI_PROVIDER_INFO[aiProvider].name}...`} />
-      </div>
-    );
-  }
+  const isGenerating = status === 'generating' || status === 'uploading';
 
   if (!roomImage) {
     return (
@@ -150,6 +144,10 @@ export function DesignPage() {
           </div>
         </aside>
       </div>
+
+      {isGenerating && (
+        <LoadingState message={`Generating with ${AI_PROVIDER_INFO[aiProvider].name}...`} />
+      )}
     </div>
   );
 }
