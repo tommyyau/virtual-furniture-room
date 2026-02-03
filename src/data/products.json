@@ -46,8 +46,8 @@
     "price": 49.99,
     "currency": "USD",
     "dimensions": { "width": 80, "height": 202, "depth": 28, "unit": "cm" },
-    "imageUrl": "https://images.unsplash.com/photo-1588279102819-f4220f56fbd5?w=500&h=500&fit=crop",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1588279102819-f4220f56fbd5?w=200&h=200&fit=crop",
+    "imageUrl": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&h=500&fit=crop",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=200&h=200&fit=crop",
     "category": "Storage",
     "ikeaUrl": "https://www.ikea.com/us/en/p/billy-bookcase-white-40263848/"
   },
@@ -228,8 +228,8 @@
     "price": 69.99,
     "currency": "USD",
     "dimensions": { "width": 100, "height": 53, "depth": 36, "unit": "cm" },
-    "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=500&fit=crop",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop",
+    "imageUrl": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=500&h=500&fit=crop",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=200&h=200&fit=crop",
     "category": "Living Room",
     "ikeaUrl": "https://www.ikea.com/us/en/p/vittsjoe-tv-unit-black-brown-glass-00303315/"
   },
@@ -241,8 +241,8 @@
     "price": 179.00,
     "currency": "USD",
     "dimensions": { "width": 148, "height": 92, "depth": 209, "unit": "cm" },
-    "imageUrl": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&h=500&fit=crop",
-    "thumbnailUrl": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=200&h=200&fit=crop",
+    "imageUrl": "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=500&h=500&fit=crop",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=200&h=200&fit=crop",
     "category": "Bedroom",
     "ikeaUrl": "https://www.ikea.com/us/en/p/tarva-bed-frame-pine-luroey-s89932283/"
   },
