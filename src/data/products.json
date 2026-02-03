@@ -9,8 +9,7 @@
     "dimensions": { "width": 77, "height": 147, "depth": 39, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1594620302200-9a762244a156?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1594620302200-9a762244a156?w=200&h=200&fit=crop",
-    "category": "Storage",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/kallax-shelf-unit-white-20275814/"
+    "category": "Storage"
   },
   {
     "id": "malm-1",
@@ -22,8 +21,7 @@
     "dimensions": { "width": 156, "height": 100, "depth": 209, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=200&h=200&fit=crop",
-    "category": "Bedroom",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/malm-bed-frame-high-white-69009475/"
+    "category": "Bedroom"
   },
   {
     "id": "kivik-1",
@@ -35,8 +33,7 @@
     "dimensions": { "width": 228, "height": 83, "depth": 95, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=200&h=200&fit=crop",
-    "category": "Living Room",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/kivik-sofa-hillared-anthracite-39011297/"
+    "category": "Living Room"
   },
   {
     "id": "billy-1",
@@ -48,8 +45,7 @@
     "dimensions": { "width": 80, "height": 202, "depth": 28, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=200&h=200&fit=crop",
-    "category": "Storage",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/billy-bookcase-white-40263848/"
+    "category": "Storage"
   },
   {
     "id": "poang-1",
@@ -61,8 +57,7 @@
     "dimensions": { "width": 68, "height": 100, "depth": 82, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=200&h=200&fit=crop",
-    "category": "Living Room",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/poang-armchair-brown-knisa-light-beige-39299019/"
+    "category": "Living Room"
   },
   {
     "id": "lack-1",
@@ -74,8 +69,7 @@
     "dimensions": { "width": 90, "height": 45, "depth": 55, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=200&h=200&fit=crop",
-    "category": "Living Room",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/lack-coffee-table-white-90104291/"
+    "category": "Living Room"
   },
   {
     "id": "hemnes-1",
@@ -87,8 +81,7 @@
     "dimensions": { "width": 160, "height": 96, "depth": 50, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=200&h=200&fit=crop",
-    "category": "Bedroom",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/hemnes-8-drawer-dresser-white-stain-80374284/"
+    "category": "Bedroom"
   },
   {
     "id": "nordli-1",
@@ -100,8 +93,7 @@
     "dimensions": { "width": 160, "height": 52, "depth": 202, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=200&h=200&fit=crop",
-    "category": "Bedroom",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/nordli-bed-frame-with-storage-white-00349849/"
+    "category": "Bedroom"
   },
   {
     "id": "alex-1",
@@ -113,8 +105,7 @@
     "dimensions": { "width": 131, "height": 76, "depth": 60, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=200&h=200&fit=crop",
-    "category": "Office",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/alex-desk-white-00473546/"
+    "category": "Office"
   },
   {
     "id": "markus-1",
@@ -126,8 +117,7 @@
     "dimensions": { "width": 62, "height": 140, "depth": 60, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=200&h=200&fit=crop",
-    "category": "Office",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/markus-office-chair-vissle-dark-gray-70261150/"
+    "category": "Office"
   },
   {
     "id": "ekedalen-1",
@@ -139,8 +129,7 @@
     "dimensions": { "width": 120, "height": 75, "depth": 80, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=200&h=200&fit=crop",
-    "category": "Dining Room",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/ekedalen-extendable-table-white-80340784/"
+    "category": "Dining Room"
   },
   {
     "id": "ingolf-1",
@@ -152,8 +141,7 @@
     "dimensions": { "width": 43, "height": 91, "depth": 52, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1503602642458-232111445657?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1503602642458-232111445657?w=200&h=200&fit=crop",
-    "category": "Dining Room",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/ingolf-chair-white-70103250/"
+    "category": "Dining Room"
   },
   {
     "id": "strandmon-1",
@@ -165,8 +153,7 @@
     "dimensions": { "width": 82, "height": 101, "depth": 96, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop",
-    "category": "Living Room",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/strandmon-wing-chair-nordvalla-dark-gray-90359829/"
+    "category": "Living Room"
   },
   {
     "id": "ektorp-1",
@@ -178,8 +165,7 @@
     "dimensions": { "width": 179, "height": 88, "depth": 88, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=200&h=200&fit=crop",
-    "category": "Living Room",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/ektorp-loveseat-hallarp-gray-s49032399/"
+    "category": "Living Room"
   },
   {
     "id": "lisabo-1",
@@ -191,8 +177,7 @@
     "dimensions": { "width": 140, "height": 74, "depth": 78, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1604578762246-41134e37f9cc?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1604578762246-41134e37f9cc?w=200&h=200&fit=crop",
-    "category": "Dining Room",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/lisabo-table-ash-veneer-70270235/"
+    "category": "Dining Room"
   },
   {
     "id": "brimnes-1",
@@ -204,8 +189,7 @@
     "dimensions": { "width": 39, "height": 53, "depth": 41, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1499933374294-4584851497cc?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1499933374294-4584851497cc?w=200&h=200&fit=crop",
-    "category": "Bedroom",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/brimnes-nightstand-white-10234942/"
+    "category": "Bedroom"
   },
   {
     "id": "stockholm-1",
@@ -217,8 +201,7 @@
     "dimensions": { "width": 32, "height": 140, "depth": 32, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=200&h=200&fit=crop",
-    "category": "Lighting",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/stockholm-floor-lamp-walnut-veneer-40394296/"
+    "category": "Lighting"
   },
   {
     "id": "vittsjoe-1",
@@ -230,8 +213,7 @@
     "dimensions": { "width": 100, "height": 53, "depth": 36, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=200&h=200&fit=crop",
-    "category": "Living Room",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/vittsjoe-tv-unit-black-brown-glass-00303315/"
+    "category": "Living Room"
   },
   {
     "id": "tarva-1",
@@ -243,8 +225,7 @@
     "dimensions": { "width": 148, "height": 92, "depth": 209, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=200&h=200&fit=crop",
-    "category": "Bedroom",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/tarva-bed-frame-pine-luroey-s89932283/"
+    "category": "Bedroom"
   },
   {
     "id": "fado-1",
@@ -256,7 +237,6 @@
     "dimensions": { "width": 25, "height": 24, "depth": 25, "unit": "cm" },
     "imageUrl": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=500&h=500&fit=crop",
     "thumbnailUrl": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=200&h=200&fit=crop",
-    "category": "Lighting",
-    "ikeaUrl": "https://www.ikea.com/us/en/p/fado-table-lamp-white-80096372/"
+    "category": "Lighting"
   }
 ]

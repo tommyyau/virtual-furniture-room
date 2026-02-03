@@ -90,16 +90,6 @@ export function ResultPage() {
                   <span className="result-furniture-name">{item.name}</span>
                   <span className="result-furniture-price">${item.price.toFixed(2)}</span>
                 </div>
-                {item.ikeaUrl && (
-                  <a
-                    href={item.ikeaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="result-furniture-link"
-                  >
-                    View on IKEA
-                  </a>
-                )}
               </div>
             ))}
           </div>

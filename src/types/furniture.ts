@@ -14,5 +14,4 @@ export interface FurnitureItem {
   imageUrl: string;
   thumbnailUrl: string;
   category: string;
-  ikeaUrl?: string;
 }
