@@ -43,7 +43,7 @@ export function LoadingState({ message = 'Generating your room design...' }: Loa
         </div>
         <h2 className="loading-title">Please Wait</h2>
         <p className="loading-message">{message}</p>
-        <p className="loading-hint">This typically takes 30-60 seconds. Please do not close or refresh the page.</p>
+        <p className="loading-hint">This typically takes up to 60 seconds. Please do not close or refresh the page.</p>
         <div className="loading-timer">
           <span className="loading-timer-label">Elapsed</span>
           <span className="loading-timer-value">{formatTime(elapsedSeconds)}</span>
