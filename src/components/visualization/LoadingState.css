@@ -61,3 +61,11 @@
   font-size: 0.875rem;
   color: #64748b;
 }
+
+.loading-elapsed {
+  margin: 1rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2563eb;
+  font-variant-numeric: tabular-nums;
+}
