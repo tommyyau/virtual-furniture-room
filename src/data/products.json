@@ -59,8 +59,8 @@
     "price": 129.00,
     "currency": "USD",
     "dimensions": { "width": 68, "height": 100, "depth": 82, "unit": "cm" },
-    "imageUrl": "https://www.ikea.com/us/en/images/products/poaeng-armchair-brown-knisa-light-beige__0497127_pe628958_s5.jpg",
-    "thumbnailUrl": "https://www.ikea.com/us/en/images/products/poaeng-armchair-brown-knisa-light-beige__0497127_pe628958_s3.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&h=500&fit=crop",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=200&h=200&fit=crop",
     "category": "Living Room",
     "ikeaUrl": "https://www.ikea.com/us/en/p/poang-armchair-brown-knisa-light-beige-39299019/"
   },
@@ -72,8 +72,8 @@
     "price": 19.99,
     "currency": "USD",
     "dimensions": { "width": 90, "height": 45, "depth": 55, "unit": "cm" },
-    "imageUrl": "https://www.ikea.com/us/en/images/products/lack-coffee-table-white__0702214_pe724350_s5.jpg",
-    "thumbnailUrl": "https://www.ikea.com/us/en/images/products/lack-coffee-table-white__0702214_pe724350_s3.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=500&h=500&fit=crop",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=200&h=200&fit=crop",
     "category": "Living Room",
     "ikeaUrl": "https://www.ikea.com/us/en/p/lack-coffee-table-white-90104291/"
   },
@@ -85,8 +85,8 @@
     "price": 299.00,
     "currency": "USD",
     "dimensions": { "width": 160, "height": 96, "depth": 50, "unit": "cm" },
-    "imageUrl": "https://www.ikea.com/us/en/images/products/hemnes-8-drawer-dresser-white-stain__0624611_pe691698_s5.jpg",
-    "thumbnailUrl": "https://www.ikea.com/us/en/images/products/hemnes-8-drawer-dresser-white-stain__0624611_pe691698_s3.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=500&h=500&fit=crop",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=200&h=200&fit=crop",
     "category": "Bedroom",
     "ikeaUrl": "https://www.ikea.com/us/en/p/hemnes-8-drawer-dresser-white-stain-80374284/"
   },
@@ -111,8 +111,8 @@
     "price": 229.00,
     "currency": "USD",
     "dimensions": { "width": 131, "height": 76, "depth": 60, "unit": "cm" },
-    "imageUrl": "https://www.ikea.com/us/en/images/products/alex-desk-white__0735967_pe740304_s5.jpg",
-    "thumbnailUrl": "https://www.ikea.com/us/en/images/products/alex-desk-white__0735967_pe740304_s3.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=500&h=500&fit=crop",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=200&h=200&fit=crop",
     "category": "Office",
     "ikeaUrl": "https://www.ikea.com/us/en/p/alex-desk-white-00473546/"
   },

@@ -28,10 +28,13 @@ export function GenerateButton({ disabled }: GenerateButtonProps) {
 
     try {
       const response = await generateRoomVisualization({
-        roomImageUrl: roomImage.url,
+        roomImageBase64: '',  // Will be populated from file
+        roomImageMimeType: '',  // Will be populated from file
+        roomImageFile: roomImage.file,  // Pass the File for base64 conversion
         furnitureItems: selectedItems.map((item) => ({
-          url: item.imageUrl,
+          imageUrl: item.imageUrl,
           name: item.name,
+          description: item.description,
         })),
         roomType,
         designStyle,

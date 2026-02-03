@@ -34,10 +34,12 @@ export interface VisualizationResult {
 }
 
 export interface GenerationRequest {
-  roomImageUrl: string;
+  roomImageBase64: string;
+  roomImageMimeType: string;
   furnitureItems: Array<{
-    url: string;
+    imageUrl: string;
     name: string;
+    description?: string;
   }>;
   roomType: RoomType;
   designStyle: DesignStyle;

@@ -1,10 +1,12 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import OpenAI from 'openai';
+import { toFile } from 'openai';
 
 interface GenerateRequest {
-  roomImageUrl: string;
+  roomImageBase64: string;
+  roomImageMimeType: string;
   furnitureItems: Array<{
-    url: string;
+    imageUrl: string;
     name: string;
     description?: string;
   }>;
@@ -29,21 +31,28 @@ const STYLE_DESCRIPTIONS: Record<string, string> = {
   bohemian: 'bohemian style with eclectic textures',
 };
 
-// Fetch image and convert to base64 for OpenAI
-async function fetchImageAsBase64(url: string): Promise<string> {
-  // Handle blob URLs by returning a placeholder instruction
-  if (url.startsWith('blob:')) {
-    throw new Error('Blob URLs cannot be fetched server-side. Please upload room image to a public URL.');
-  }
-
+// Fetch image from URL and convert to buffer
+async function fetchImageAsBuffer(url: string): Promise<{ buffer: Buffer; mimeType: string }> {
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`Failed to fetch image: ${response.status}`);
+    throw new Error(`Failed to fetch image from ${url}: ${response.status}`);
   }
-  const buffer = await response.arrayBuffer();
-  const base64 = Buffer.from(buffer).toString('base64');
-  const contentType = response.headers.get('content-type') || 'image/jpeg';
-  return `data:${contentType};base64,${base64}`;
+  const buffer = Buffer.from(await response.arrayBuffer());
+  const mimeType = response.headers.get('content-type') || 'image/jpeg';
+  return { buffer, mimeType };
+}
+
+// Convert base64 data URL to buffer
+function base64ToBuffer(base64: string): Buffer {
+  // Handle data URL format
+  if (base64.startsWith('data:')) {
+    const matches = base64.match(/^data:([^;]+);base64,(.+)$/);
+    if (matches) {
+      return Buffer.from(matches[2], 'base64');
+    }
+  }
+  // Plain base64
+  return Buffer.from(base64, 'base64');
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -64,59 +73,95 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: 'OpenAI API key not configured' });
   }
 
-  const { roomImageUrl, furnitureItems, roomType, designStyle } = req.body as GenerateRequest;
+  const { roomImageBase64, roomImageMimeType, furnitureItems, roomType, designStyle } = req.body as GenerateRequest;
 
-  if (!roomImageUrl) {
-    return res.status(400).json({ error: 'Room image URL is required' });
+  if (!roomImageBase64) {
+    return res.status(400).json({ error: 'Room image is required' });
+  }
+
+  if (!furnitureItems || furnitureItems.length === 0) {
+    return res.status(400).json({ error: 'At least one furniture item is required' });
   }
 
   const openai = new OpenAI({ apiKey });
 
   try {
-    // Build furniture description
-    const furnitureList = furnitureItems
-      ?.map((item) => item.name)
-      .join(', ') || 'modern furniture';
+    // Prepare image files for the API
+    const imageFiles: Awaited<ReturnType<typeof toFile>>[] = [];
+
+    // 1. Room image (first, most important)
+    const roomBuffer = base64ToBuffer(roomImageBase64);
+    const extension = roomImageMimeType.split('/')[1] || 'jpeg';
+    const roomFile = await toFile(roomBuffer, `room.${extension}`, { type: roomImageMimeType });
+    imageFiles.push(roomFile);
+
+    // 2. Fetch furniture product images (up to 4 more for highest fidelity - total 5)
+    const maxFurnitureImages = Math.min(furnitureItems.length, 4);
+    for (let i = 0; i < maxFurnitureImages; i++) {
+      const item = furnitureItems[i];
+      try {
+        const { buffer, mimeType } = await fetchImageAsBuffer(item.imageUrl);
+        const ext = mimeType.split('/')[1] || 'jpeg';
+        const furnitureFile = await toFile(buffer, `furniture_${i + 1}.${ext}`, { type: mimeType });
+        imageFiles.push(furnitureFile);
+      } catch (fetchError) {
+        console.warn(`Failed to fetch furniture image for ${item.name}:`, fetchError);
+        // Continue with other images
+      }
+    }
+
+    // Build furniture reference list for prompt
+    const furnitureReferences = furnitureItems.map((item, index) => {
+      const desc = item.description ? ` (${item.description})` : '';
+      if (index < maxFurnitureImages) {
+        return `- Reference image ${index + 2}: ${item.name}${desc}`;
+      }
+      return `- ${item.name}${desc} (described only, no reference image)`;
+    });
 
     const roomDesc = ROOM_TYPE_DESCRIPTIONS[roomType] || 'room';
     const styleDesc = STYLE_DESCRIPTIONS[designStyle] || 'modern style';
 
-    // For GPT Image 1.5, we can use the edit endpoint with image inputs
-    // or generate with a detailed prompt
+    // Build the prompt that references the images
+    const prompt = `Look at the first image (the room photo) and the IKEA product reference images.
+Replace the existing furniture in the room with the EXACT IKEA products shown in the reference images.
 
-    // Build a detailed prompt for image generation
-    const prompt = `Create a photorealistic interior design photograph of a ${roomDesc}.
+FURNITURE TO PLACE:
+${furnitureReferences.join('\n')}
 
-The room should contain the following furniture items, placed naturally and realistically:
-${furnitureList}
+CRITICAL REQUIREMENTS - The furniture must appear EXACTLY as in the product images:
+- Same color (do not change colors - if the product is black, it must be black in the result)
+- Same shape and design (exact same style, legs, armrests, etc.)
+- Same proportions and size relative to the reference
 
-STYLE REQUIREMENTS:
-- ${styleDesc}
-- Professional interior design photography quality
-- Natural lighting with realistic shadows under all furniture
-- Furniture positioned in logical locations (sofas against walls, tables in open areas)
-- High-end real estate photography aesthetic
-- Photorealistic, not illustrated or 3D rendered
+ROOM PRESERVATION:
+- Keep all other room elements UNCHANGED: walls, floor, ceiling, lighting, windows, doors
+- Maintain the same perspective and camera angle as the original room photo
+- Keep the same lighting conditions and shadows
 
-TECHNICAL REQUIREMENTS:
-- Sharp, high-quality image
-- Proper perspective and proportions
-- Cohesive color palette that matches the ${styleDesc} aesthetic
-- The furniture should look like it genuinely belongs in the space`;
+PLACEMENT:
+- Position the furniture naturally where the old furniture was
+- Ensure proper scale relative to the room
+- Add realistic shadows under the furniture
 
-    console.log('Generating with GPT Image 1.5...');
+This is a ${roomDesc} in ${styleDesc}.
+The result should be photorealistic, as if the IKEA furniture was photographed in this actual room.`;
 
-    // Use gpt-image-1.5 - OpenAI's latest image generation model
-    const response = await openai.images.generate({
+    console.log('Generating with GPT Image 1.5 - multi-image edit...');
+    console.log(`Images: 1 room + ${imageFiles.length - 1} furniture references`);
+
+    // Use images.edit() with multiple image inputs
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const response = await (openai.images.edit as any)({
       model: 'gpt-image-1.5',
+      image: imageFiles,
       prompt: prompt,
-      n: 1,
-      size: '1536x1024', // Landscape format for rooms
+      size: '1536x1024',
       quality: 'high',
     });
 
     // GPT Image models return base64-encoded images
-    const imageData = response.data[0];
+    const imageData = response.data?.[0];
 
     if (!imageData?.b64_json) {
       return res.status(500).json({
