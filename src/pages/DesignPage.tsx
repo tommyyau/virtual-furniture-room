@@ -5,14 +5,15 @@ import { GenerateButton } from '../components/visualization/GenerateButton';
 import { LoadingState } from '../components/visualization/LoadingState';
 import { Button } from '../components/ui/Button';
 import { useRoomStore, useFurnitureStore, useVisualizationStore } from '../store';
-import { ROOM_TYPE_LABELS, DESIGN_STYLE_LABELS } from '../types/room';
 import { AI_PROVIDER_INFO } from '../types/visualization';
-import type { RoomType, DesignStyle, AIProvider } from '../types';
 import './DesignPage.css';
+
+// Only show OpenAI for now - other providers hidden until API keys configured
+const VISIBLE_PROVIDERS = ['openai'] as const;
 
 export function DesignPage() {
   const navigate = useNavigate();
-  const { roomImage, roomType, designStyle, aiProvider, setRoomType, setDesignStyle, setAIProvider } = useRoomStore();
+  const { roomImage, aiProvider, setAIProvider } = useRoomStore();
   const selectedItems = useFurnitureStore((state) => state.selectedItems);
   const { status, error } = useVisualizationStore();
 
@@ -82,59 +83,28 @@ export function DesignPage() {
             <RoomPreview showClearButton={false} />
           </div>
 
-          <div className="design-section">
-            <h2 className="design-section-title">AI Provider</h2>
-            <p className="design-section-hint">Choose which AI service to use for generation</p>
-            <div className="provider-options">
-              {(Object.entries(AI_PROVIDER_INFO) as [AIProvider, typeof AI_PROVIDER_INFO[AIProvider]][]).map(
-                ([value, info]) => (
-                  <button
-                    key={value}
-                    className={`provider-option ${aiProvider === value ? 'active' : ''}`}
-                    onClick={() => setAIProvider(value)}
-                  >
-                    <span className="provider-name">{info.name}</span>
-                    <span className="provider-cost">{info.cost}</span>
-                    <span className="provider-desc">{info.description}</span>
-                  </button>
-                )
-              )}
+          {VISIBLE_PROVIDERS.length > 1 && (
+            <div className="design-section">
+              <h2 className="design-section-title">AI Provider</h2>
+              <p className="design-section-hint">Choose which AI service to use for generation</p>
+              <div className="provider-options">
+                {VISIBLE_PROVIDERS.map((providerKey) => {
+                  const info = AI_PROVIDER_INFO[providerKey];
+                  return (
+                    <button
+                      key={providerKey}
+                      className={`provider-option ${aiProvider === providerKey ? 'active' : ''}`}
+                      onClick={() => setAIProvider(providerKey)}
+                    >
+                      <span className="provider-name">{info.name}</span>
+                      <span className="provider-cost">{info.cost}</span>
+                      <span className="provider-desc">{info.description}</span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-
-          <div className="design-section">
-            <h2 className="design-section-title">Room Type</h2>
-            <div className="design-options">
-              {(Object.entries(ROOM_TYPE_LABELS) as [RoomType, string][]).map(
-                ([value, label]) => (
-                  <button
-                    key={value}
-                    className={`design-option ${roomType === value ? 'active' : ''}`}
-                    onClick={() => setRoomType(value)}
-                  >
-                    {label}
-                  </button>
-                )
-              )}
-            </div>
-          </div>
-
-          <div className="design-section">
-            <h2 className="design-section-title">Design Style</h2>
-            <div className="design-options">
-              {(Object.entries(DESIGN_STYLE_LABELS) as [DesignStyle, string][]).map(
-                ([value, label]) => (
-                  <button
-                    key={value}
-                    className={`design-option ${designStyle === value ? 'active' : ''}`}
-                    onClick={() => setDesignStyle(value)}
-                  >
-                    {label}
-                  </button>
-                )
-              )}
-            </div>
-          </div>
+          )}
         </div>
 
         <aside className="design-page-sidebar">

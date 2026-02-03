@@ -14,22 +14,6 @@ interface GenerateRequest {
   designStyle: string;
 }
 
-const ROOM_TYPE_DESCRIPTIONS: Record<string, string> = {
-  livingroom: 'living room',
-  bedroom: 'bedroom',
-  diningroom: 'dining room',
-  office: 'home office',
-  kitchen: 'kitchen',
-};
-
-const STYLE_DESCRIPTIONS: Record<string, string> = {
-  modern: 'modern style with clean lines and contemporary aesthetic',
-  minimalist: 'minimalist style with sparse, uncluttered design',
-  scandinavian: 'Scandinavian style with light woods and cozy feel',
-  industrial: 'industrial style with exposed materials and metal accents',
-  traditional: 'traditional style with classic elegance',
-  bohemian: 'bohemian style with eclectic textures',
-};
 
 // Fetch image from URL and convert to buffer
 async function fetchImageAsBuffer(url: string): Promise<{ buffer: Buffer; mimeType: string }> {
@@ -119,9 +103,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return `- ${item.name}${desc} (described only, no reference image)`;
     });
 
-    const roomDesc = ROOM_TYPE_DESCRIPTIONS[roomType] || 'room';
-    const styleDesc = STYLE_DESCRIPTIONS[designStyle] || 'modern style';
-
     // Build the prompt that references the images
     const prompt = `Look at the first image (the room photo) and the IKEA product reference images.
 Replace the existing furniture in the room with the EXACT IKEA products shown in the reference images.
@@ -144,7 +125,6 @@ PLACEMENT:
 - Ensure proper scale relative to the room
 - Add realistic shadows under the furniture
 
-This is a ${roomDesc} in ${styleDesc}.
 The result should be photorealistic, as if the IKEA furniture was photographed in this actual room.`;
 
     console.log('Generating with GPT Image 1.5 - multi-image edit...');

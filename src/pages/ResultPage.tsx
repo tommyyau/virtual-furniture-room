@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import { ResultViewer } from '../components/visualization/ResultViewer';
 import { Button } from '../components/ui/Button';
 import { useVisualizationStore, useRoomStore, useFurnitureStore } from '../store';
-import { ROOM_TYPE_LABELS, DESIGN_STYLE_LABELS } from '../types/room';
 import { AI_PROVIDER_INFO } from '../types/visualization';
 import './ResultPage.css';
 
@@ -43,9 +42,6 @@ export function ResultPage() {
       <div className="result-page-header">
         <div>
           <h1 className="result-page-title">Your AI-Generated Design</h1>
-          <p className="result-page-subtitle">
-            {ROOM_TYPE_LABELS[result.roomType]} in {DESIGN_STYLE_LABELS[result.designStyle]} style
-          </p>
           <p className="result-page-provider">
             Generated with {AI_PROVIDER_INFO[result.provider].name}
           </p>
