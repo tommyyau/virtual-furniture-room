@@ -17,6 +17,10 @@ export const useVisualizationStore = create<VisualizationState>((set) => ({
   error: null,
   setStatus: (status) => set({ status }),
   setResult: (result) => set({ result, status: result ? 'complete' : 'idle' }),
-  setError: (error) => set({ error, status: error ? 'error' : 'idle' }),
+  setError: (error) => set((state) => ({
+    error,
+    // Only change status if setting an error, not when clearing it
+    status: error ? 'error' : state.status
+  })),
   reset: () => set({ status: 'idle', result: null, error: null }),
 }));
