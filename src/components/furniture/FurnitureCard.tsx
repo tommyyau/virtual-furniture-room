@@ -20,11 +20,6 @@ export function FurnitureCard({ item, showAddButton = true }: FurnitureCardProps
     }
   };
 
-  const formatDimensions = () => {
-    const { width, height, depth, unit } = item.dimensions;
-    return `${width} x ${depth} x ${height} ${unit}`;
-  };
-
   return (
     <div className={`furniture-card ${selected ? 'furniture-card-selected' : ''}`}>
       <div className="furniture-card-image-container">
@@ -51,7 +46,6 @@ export function FurnitureCard({ item, showAddButton = true }: FurnitureCardProps
       </div>
       <div className="furniture-card-content">
         <h3 className="furniture-card-name">{item.name}</h3>
-        <p className="furniture-card-dimensions">{formatDimensions()}</p>
         <div className="furniture-card-footer">
           <span className="furniture-card-price">
             ${item.price.toFixed(2)}
